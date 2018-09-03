@@ -1,12 +1,12 @@
 import React from 'react';
 
+// path to images
 const path = 'src/images/'
 
 class Photo extends React.Component {
     constructor(props) {
         super(props)
     }
-
 
     render() {
         const { size, photo } = this.props

@@ -10,6 +10,8 @@ class MessageForm extends React.Component {
     handleChange(e) {
         this.setState({value: e.target.value});
     }
+
+    // add message with enter
     onEnterPress(e) {
       if(e.keyCode == 13 && e.shiftKey == false) {
         e.preventDefault()
@@ -18,6 +20,7 @@ class MessageForm extends React.Component {
       }
     }
 
+    // add message with click
     onClick() {
         this.props.change(this.state.value, this.props.user.id)
         this.setState({value: ''})
@@ -35,8 +38,9 @@ class MessageForm extends React.Component {
                 <div className="list-messages">{messages.length > 0 && messages.map((m, i) => {
                     const className = user.id === m.userId ? 'my-messages' : 'another-messages'
                     return [
-                        m.time && <div key={i + '_0'} className="time"><small>{m.time}</small></div>,
-                        <div  key={i + '_1'} className={className} key={i}>{
+                        m.date && <div key={i + '_0'} className="time"><small>{m.date + ' ' + m.time}</small></div>,
+                        m.date === null && m.time && <div key={i + '_1'} className="time"><small>{m.time}</small></div>,
+                        <div  key={i + '_2'} className={className} key={i}>{
                             m.message.split('\n').map((line, i) => (i === 0 ? line : [<br/>, line]))}
                         </div>,]
                 })}</div>
