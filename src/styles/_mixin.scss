@@ -1,0 +1,136 @@
+
+@mixin display-flex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flexbox;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+
+
+// Justify content
+// --------------------------------------------------
+@mixin justify-content($justify: flex-start) {
+    @if not index((flex-start, flex-end, center, space-between, space-around, space-evenly, inherit), $justify) {
+        $justify: flex-start;
+    }
+
+    @if $justify == "flex-start" {
+        -webkit-box-pack: start;
+        -moz-box-pack: start;
+        -webkit-flex-pack: start;
+        -ms-flex-pack: start;
+        -moz-justify-content: flex-start;
+        -webkit-justify-content: flex-start;
+        justify-content: flex-start;
+    }
+    @else if $justify == "flex-end" {
+        -webkit-box-pack: end;
+        -moz-box-pack: end;
+        -webkit-flex-pack: end;
+        -ms-flex-pack: end;
+        -moz-justify-content: flex-end;
+        -webkit-justify-content: flex-end;
+        justify-content: flex-end;
+    }
+    @else if $justify == "center" {
+        -webkit-box-pack: center;
+        -moz-box-pack: center;
+        -webkit-flex-pack: center;
+        -ms-flex-pack: center;
+        -moz-justify-content: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+    }
+    @else if $justify == "initial" {
+        -webkit-box-pack: initial;
+        -moz-box-pack: initial;
+        -webkit-flex-pack: initial;
+        -ms-flex-pack: initial;
+        -moz-justify-content: initial;
+        -webkit-justify-content: initial;
+        justify-content: initial;
+    }
+    @else if $justify == "space-between" {
+        -webkit-box-pack: justify;
+        -moz-box-pack: justify;
+        -webkit-flex-pack: justify;
+        -ms-flex-pack: justify;
+        -moz-justify-content: space-between;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+    }
+    @else if $justify == "space-around" {
+        -moz-justify-content: space-around;
+        -webkit-justify-content: space-around;
+        justify-content: space-around;
+    }
+    @else if $justify == "space-evenly" {
+        -moz-justify-content: space-evenly;
+        -webkit-justify-content: space-evenly;
+        justify-content: space-evenly;
+    }
+    @else if $justify == "inherit" {
+        -webkit-box-pack: inherit;
+        -moz-box-pack: inherit;
+        -webkit-flex-pack: inherit;
+        -ms-flex-pack: inherit;
+        -moz-justify-content: inherit;
+        -webkit-justify-content: inherit;
+        justify-content: inherit;
+    }
+}
+
+// Align items
+// --------------------------------------------------
+
+@mixin align-items($align: stretch) {
+    @if not index((flex-start, flex-end, center, baseline, stretch, inherit), $align) {
+        $align: stretch;
+    }
+
+    @if $align == "flex-start" {
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        -webkit-align-items: flex-start;
+        -moz-align-items: flex-start;
+        align-items: flex-start;
+    }
+    @else if $align == "flex-end" {
+        -webkit-box-align: end;
+        -ms-flex-align: end;
+        -webkit-align-items: flex-end;
+        -moz-align-items: flex-end;
+        align-items: flex-end;
+    }
+    @else if $align == "center" {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        -moz-align-items: center;
+        align-items: center;
+    }
+    @else if $align == "baseline" {
+        -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+        -webkit-align-items: baseline;
+        -moz-align-items: baseline;
+        align-items: baseline;
+    }
+    @else if $align == "stretch" {
+        -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+        -webkit-align-items: stretch;
+        -moz-align-items: stretch;
+        align-items: stretch;
+    }
+    @else if $align == "inherit" {
+        -webkit-box-align: inherit;
+        -ms-flex-align: inherit;
+        -webkit-align-items: inherit;
+        -moz-align-items: inherit;
+        align-items: inherit;
+    }
+}
