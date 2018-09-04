@@ -2,6 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import moment from 'moment';
+import style from '../styles/base.scss';
 /* reducers */
 import { getUsers, getMessages } from './reducers/messages'
 /* components */
